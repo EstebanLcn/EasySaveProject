@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="EasySave_Graphical.Views.SaveStatus"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:Easysave_Core.Service.StatusService.Languages;assembly=Easysave-Core" xmlns:model="clr-namespace:Easysave_Core.Service.SaveService;assembly=Easysave-Core"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <local:ItemToTranslate x:Key="Language"/>
+        <model:Saves x:Key="saves"/>
+    </UserControl.Resources>
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ListView x:Name="__ProjectSaveListView_" Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" Grid.ColumnSpan="4" SelectionMode="Multiple">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="VerticalContentAlignment" Value="Top"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.View>
+                <GridView x:Name="__GridView_">
+                    <GridViewColumn x:Name="SaveName" DisplayMemberBinding="{Binding SaveName}" Width="Auto"/>
+                    <GridViewColumn x:Name="Progress" Width="Auto">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <ProgressBar x:Name="___SaveProcessProgressBar_" Maximum="{Binding NbFilesSourceRepository, UpdateSourceTrigger=PropertyChanged}" Value="{Binding NbFilesDestinationRepository,UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Right" Height="13" Margin="0,151,24,0" VerticalAlignment="Top" Width="207"/>
+                                </Grid>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <DockPanel Grid.Row="0" Grid.Column="5" Grid.RowSpan="4"  Background="#889AC7">
+            <StackPanel VerticalAlignment="Center">
+                <Button x:Name="BtnLogs_Copy1" Margin="0,0,0,20" Width="100" Content="Resume" Height="50" Click="Resume"/>
+                <Button x:Name="BtnLogs_Copy"  Margin="0,0,0,20"  Width="100" Content="Pause" Height="50" Click="Pause"/>
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</UserControl>

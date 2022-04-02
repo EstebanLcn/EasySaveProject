@@ -1,0 +1,26 @@
+{
+    "Language": "Français",
+    "_Progression": "Progression :",
+    "CompleteSave": "Sauvegarde complète",
+    "DifferentialSave": "Sauvegarde Différentielle",
+    "ProfileName": "Nom du profil",
+    "AddProfile": "Ajouter un profil",
+    "Logs": "Fichiers journaliers",
+    "_Parameters": "Paramètres :",
+    "_Current": "Actuels : ",
+    "Current": "Aucun",
+    "_ValidProcess": "Veuillez entrer le nom d'un processus valide",
+    "_Language": "Langues :",
+    "_SelectLanguage": "Veuillez sélectionner une langue :",
+    "Apply": "Appliquer",
+    "Saves": "Sauvegardes",
+    "Settings": "Paramètres",
+    "Quit": "Quitter",
+    "MSG_Restart": "Veuillez redémarrer l'application pour appliquer les changements",
+    "MSG_ProcessBlocking": "Vous avez un logiciel bloquant la sauvegarde\nVeuillez vérifier laquelle dans les paramètres de l'application",
+    "Resume": "Reprendre",
+    "Pause": "Arrêter"
+
+
+
+}

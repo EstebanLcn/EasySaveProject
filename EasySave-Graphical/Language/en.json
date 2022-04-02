@@ -1,0 +1,22 @@
+{
+    "Language": "English",
+    "CompleteSave": "Complete Save",
+    "DifferentialSave": "Differential Save",
+    "ProfileName": "Profile Name",
+    "AddProfile": "Add profile",
+    "Logs": "Logs",
+    "_Parameters": "Parameters :",
+    "_Current": "Current : ",
+    "_ValidProcess": "Please enter a valid process name ",
+    "_Language": "Languages :",
+    "_SelectLanguage": "Please select a language :",
+    "Apply": "Apply",
+    "Saves": "Saves",
+    "Settings": "Settings",
+    "Quit": "Quit",
+    "MSG_Restart": "Please restart the app to apply all changes",
+    "MSG_ProcessBlocking": "You have a software blocking the save progress\nplease check which one in the parameters",
+    "Resume": "Resume",
+    "Pause":  "Pause"
+
+}

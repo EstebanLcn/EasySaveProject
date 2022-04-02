@@ -1,0 +1,43 @@
+﻿<Window x:Class="EasySave_Graphical.ParamWindow"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:local="clr-namespace:Easysave_Core.Service.StatusService;assembly=Easysave-Core"
+        mc:Ignorable="d"
+        Title="ParamWindow" Height="450" Width="800">
+    <Window.Resources>
+        <local:ParamLanguages x:Key="Language"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="process_name_txtbx" HorizontalAlignment="Left" Height="23" Margin="37,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged" RenderTransformOrigin="-2.15,0.435" Grid.Column="1" Grid.RowSpan="2"/>
+        <Label Content="{Binding ElementName=CBO_Language, Path=SelectedItem.LabelValidProcess}" HorizontalAlignment="Left" Height="26" Margin="109,211,0,0" VerticalAlignment="Top" Width="296" RenderTransformOrigin="0.73,0.188" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <Label Content="{Binding ElementName=CBO_Language, Path=SelectedItem.LabelCurrentProcess}" HorizontalAlignment="Left" Margin="109,159,0,0" VerticalAlignment="Top" Width="228" Height="26"/>
+        <Label x:Name="current_process" Content="None" HorizontalAlignment="Left" Margin="347,159,0,0" VerticalAlignment="Top" Width="165" Grid.ColumnSpan="2"/>
+        <Button Content="{Binding ElementName=CBO_Language, Path=SelectedItem.BtnChangeProcess}" Grid.Column="1" HorizontalAlignment="Left" Margin="213,211,0,0" VerticalAlignment="Top" Width="139" Click="Button_Click_1" Height="26" Grid.RowSpan="2"/>
+        <Label x:Name="WindowTitle" Grid.ColumnSpan="2" Content="{Binding ElementName=CBO_Language, Path=SelectedItem.TitleParam}" HorizontalAlignment="Left" Height="40" Margin="209,57,0,0" VerticalAlignment="Top" Width="366" FontSize="25"/>
+        <Label x:Name="ProcessCategoryTitle" Content="{Binding ElementName=CBO_Language, Path=SelectedItem.TitleProcess}" HorizontalAlignment="Left" Height="30" Margin="81,116,0,0" VerticalAlignment="Top" Width="89" FontSize="15"/>
+        <Label x:Name="LanguageCategoryTitle" Content="{Binding ElementName=CBO_Language, Path=SelectedItem.TitleLanguages}" HorizontalAlignment="Left" Margin="54,137,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="15"/>
+        <CheckBox Content="CheckBox" HorizontalAlignment="Left" Height="0" Margin="226,172,0,0" VerticalAlignment="Top" Width="4"/>
+        <ComboBox  x:Name="CBO_Language" Grid.Column="1" ItemsSource="{Binding Source={StaticResource Language}, Path=MyLangs}" HorizontalAlignment="Left" Margin="22,182,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.109,0.549">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Language}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Label Content="{Binding ElementName=CBO_Language, Path=SelectedItem.LabelSelectLanguage}" HorizontalAlignment="Left" Margin="209,183,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.037,2.341" />
+        <Label Content="{Binding ElementName=CBO_Language, Path=SelectedItem.LabelCurrentLanguage}" HorizontalAlignment="Left" Margin="230,137,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label x:Name="Language_Label" Content="{Binding ElementName=CBO_Language, Path=SelectedItem.Language}" HorizontalAlignment="Left" Margin="337,137,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
